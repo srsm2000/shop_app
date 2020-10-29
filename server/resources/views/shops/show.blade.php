@@ -1,4 +1,3 @@
-<!-- 商品のidを元に編集ページへ遷移する -->
 <h1>{{ $shop->name }}</h1>
 <a href="/shops"><button>一覧へ戻る</button></a>
 <a href="/shops/{{ $shop->id }}/edit"><button>編集する</button></a>

@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'GeneralController@home');
-Route::get('/login',[
-    'uses' => 'UserController@getLogin',
-    'as' => 'user.login'
-    ]);
-Route::post('/login',[
-    'uses' => 'UserController@postLogin',
-    'as' => 'user.login'
-    ]);
+
 Route::resource('shops', 'ShopController');
+
 Route::resource('users', 'UserController');
+
+// 以下の処理により、
+// 会員登録画面は /register
+// ログイン画面は /login
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -40,13 +40,13 @@ class shopController extends Controller
     {
         // shopモデルから1件を取得
         $shop = Shop::find($id);
-        return view('shops.show', ['shop'=>$shop]);
+        return view('shops.show', ['shop' => $shop]);
     }
 
     public function edit($id)
     {
         $shop = Shop::find($id);
-        return view('shops.edit', ['shop'=>$shop]);
+        return view('shops.edit', ['shop' => $shop]);
     }
 
     public function update(ShopRequest $request, $id)
