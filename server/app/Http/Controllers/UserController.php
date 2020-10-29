@@ -9,24 +9,6 @@ use App\Http\Requests\UserRequest;
 
 class userController extends Controller
 {
-    public function getLogin()
-    {
-        return view('users.login');
-    }
-
-    public function postLogin(UserRequest $request)
-    {
-        $this->validate($request,[
-            'email' => 'email|required',
-            'password' => 'required|min:4'
-        ]);
-
-        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-            return redirect()->route('user.profile');
-        }
-        return redirect()->back();
-    }
-
     public function index()
     {
         $users = User::all();
