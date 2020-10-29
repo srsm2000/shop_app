@@ -18,6 +18,9 @@ Route::resource('shops', 'ShopController');
 
 Route::resource('users', 'UserController');
 
+// 以下の処理により、
+// 会員登録画面は /register
+// ログイン画面は /login
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
