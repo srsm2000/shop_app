@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('title', 'ユーザー')
+
+@section('content')
+
 <!-- 商品のidを元に編集ページへ遷移する -->
 <h1>{{ $user->name }}</h1>
 <p>{{ $user->email }}</p>
@@ -9,3 +15,5 @@
     <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
     {{-- return falseはリンクに飛ばないようにしている --}}
 </form>
+
+@endsection

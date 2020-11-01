@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'ショップ詳細')
+
+@section('content')
 <h1>{{ $shop->name }}</h1>
 <a href="/shops"><button>一覧へ戻る</button></a>
 <a href="/shops/{{ $shop->id }}/edit"><button>編集する</button></a>
@@ -7,3 +12,5 @@
     <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
     {{-- return falseはリンクに飛ばないようにしている --}}
 </form>
+
+@endsection

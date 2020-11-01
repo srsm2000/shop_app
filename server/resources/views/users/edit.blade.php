@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('title', '詳細画面')
+
+@section('content')
+
 @if (count($errors) > 0)
     <div>
         <P>
@@ -33,3 +39,5 @@
     </p>
     <input type="submit" value="更新">
 </form>
+
+@endsection
