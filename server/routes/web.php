@@ -16,6 +16,12 @@ Route::get('/', 'GeneralController@home');
 
 Route::resource('shops', 'ShopController');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('shops', 'ShopController', ['only' => ['create', 'edit']]);
+});
+
+Route::resource('shops', 'ShopController', ['only' => ['index', 'show']]);
+
 Route::resource('users', 'UserController');
 
 // 以下の処理により、
