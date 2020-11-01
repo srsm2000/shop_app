@@ -22,8 +22,13 @@ class shopController extends Controller
 
     public function store(ShopRequest $request)
     {
+        // google map api用
+        abort_unless(\Gate::allows('shop_create'), 403);
+        $shop = Shop::create($request->all());
+        // return redirect()->route('admin.companies.index');
+
         // インスタンスの作成
-        $shop = new Shop;
+        // $shop = new Shop;
 
         // 値の用意
         $shop->name = $request->name;
