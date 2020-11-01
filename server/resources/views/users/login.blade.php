@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('title', '詳細画面')
+
+@section('content')
+
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
     @if (count($errors) >0)
@@ -24,3 +30,5 @@
     </form>
     </div>
 </div>
+
+@endsection
